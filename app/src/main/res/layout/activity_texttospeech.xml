@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Texttospeech"
+    android:background="@color/lightblue">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:orientation="vertical"
+            android:background="@drawable/curveheader"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="60dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="20dp"
+                android:text="Language"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="20dp"
+                android:text="Gender"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="105dp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lang"
+                android:layout_width="90dp"
+                android:layout_height="85dp"
+                android:layout_centerInParent="true"
+                android:onClick="language"
+                android:elevation="20dp"
+                app:cardCornerRadius="15dp"
+android:layout_marginTop="15dp"
+                android:layout_marginLeft="60dp"
+                >
+                <RelativeLayout
+                    android:background="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/intenttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="name"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp" />
+                    <ImageView
+                        android:id="@+id/intentimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/intenttext"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/tamil" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gend"
+                android:layout_width="90dp"
+                android:layout_height="85dp"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:onClick="gender"
+                app:cardCornerRadius="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="94dp"
+                >
+                <RelativeLayout
+                    android:background="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/gendtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:text="name"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp" />
+                    <ImageView
+                        android:id="@+id/genderimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/gendtext"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/tamil" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardtext"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp">
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@drawable/outlineborder"
+            android:hint="Enter your text.."
+            android:paddingLeft="16dp"
+            android:paddingBottom="135dp"
+            android:textColor="@color/blue"
+            android:textColorHint="@color/blue"
+            android:textSize="15sp"
+            android:inputType="textMultiLine"
+            android:lineHeight="25dp"
+        android:isScrollContainer="true"
+        android:maxLines="10"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/generatebutton"
+        android:layout_width="140dp"
+        android:visibility="gone"
+        android:layout_height="42dp"
+        android:layout_gravity="end"
+      android:layout_marginRight="16dp"
+        android:background="@drawable/button"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:onClick="generate"
+        android:text="Generate"
+        android:textColor="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="48dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone"
+        android:progressBackgroundTint="#EC2E2E" />
+        <include layout="@layout/none"/>
+        <include layout="@layout/load"/>
+
+</LinearLayout>
