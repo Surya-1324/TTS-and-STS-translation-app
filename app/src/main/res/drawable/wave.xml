@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Define a path for the wave -->
+    <path
+        android:pathData="M0,50
+                           C25,25 75,75 100,50"
+        android:strokeColor="#FFFF"
+        android:strokeWidth="1"/>
+
+    <!-- Add more paths for additional waves if needed -->
+    <!-- You can adjust the pathData to create different shapes of waves -->
+
+</vector>
