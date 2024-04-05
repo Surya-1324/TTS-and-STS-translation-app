@@ -44,9 +44,10 @@ public class Texttospeech extends AppCompatActivity {
             SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
             String selectedText = preferences.getString("selectedText", "");
             int selectedImage = preferences.getInt("selectedImage", 0);
+            SharedPreferences preferences2 = getSharedPreferences("gender", MODE_PRIVATE);
 
-            String anotherSelectedText = receivedIntent.getStringExtra("selectedTextGender");
-            int anotherSelectedImage = receivedIntent.getIntExtra("selectedImageGender", 0);
+            String selectedTextGender= preferences2.getString("selectedTextGender","");
+            int selectedImageGender = preferences2.getInt("selectedImageGender", 0);
             // Display selected text and image in the layout
             TextView textView = findViewById(R.id.intenttext);
             ImageView imageView = findViewById(R.id.intentimage);
@@ -54,8 +55,8 @@ public class Texttospeech extends AppCompatActivity {
             imageView.setImageResource(selectedImage);
             TextView textView2 = findViewById(R.id.gendtext);
             ImageView imageView2 = findViewById(R.id.genderimg);
-            textView2.setText(anotherSelectedText);
-            imageView2.setImageResource(anotherSelectedImage);
+            textView2.setText(selectedTextGender);
+            imageView2.setImageResource(selectedImageGender);
         }
         buttonHandler = new ButtonHandler(this);
         EditText editText = findViewById(R.id.input);
@@ -74,11 +75,9 @@ public class Texttospeech extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 0) {
-
-                    button.setVisibility(AppCompatButton.VISIBLE);
+                    button.setAlpha(1.0f);
                 } else {
-
-                    button.setVisibility(AppCompatButton.GONE);
+                    button.setAlpha(0.5f);
                 }
             }
             @Override

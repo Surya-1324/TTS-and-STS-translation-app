@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         intent=new Intent(this,Gender.class);
         gridView=(GridView) findViewById(R.id.gridView1);
         searchView =(SearchView) findViewById(R.id.searchView1);
-        final Adapter adapter=new Adapter(this,this.getModels());
+        final Adapter adapter=new Adapter(this,this.getModels(),R.layout.model);
         if (gridView != null) {
             gridView.setAdapter(adapter);
         }
